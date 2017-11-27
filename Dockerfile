@@ -9,8 +9,8 @@ RUN yum install -y gcc glibc-static tmux git \
 
 ENV WORKSPACE_DIR /root/
 ENV IP_ADDR 0.0.0.0
-ENV USERNAME
-ENV PASSWORD
+ENV USERNAME ""
+ENV PASSWORD ""
 
 WORKDIR /usr/src/c9sdk
 EXPOSE 8080
