@@ -1,6 +1,7 @@
 FROM centos:7
 
-RUN yum install -y gcc glibc-static tmux git \
+RUN yum install -y gcc glibc-static make \
+    && yum -y install tmux git \
     && cd /usr/src/ \
     && git clone git://github.com/c9/core.git c9sdk \
     && cd c9sdk \
