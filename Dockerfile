@@ -6,7 +6,6 @@ RUN yum install -y gcc glibc-static make \
     && git clone git://github.com/c9/core.git c9sdk \
     && cd c9sdk \
     && scripts/install-sdk.sh \
-    && # Install c9.ide.language.codeintel \
     && yum install -y python-setuptools python-devel gcc-c++ \
     && easy_install pip \
     && pip install -U virtualenv \
@@ -19,7 +18,6 @@ RUN yum install -y gcc glibc-static make \
     && mv CodeIntel-0.9.3/SilverCity CodeIntel-0.9.3/silvercity \
     && tar czf CodeIntel-0.9.3.tar.gz CodeIntel-0.9.3 \
     && pip install -U --no-index --find-links=/tmp/codeintel codeintel \
-    && # Clean up compilation \
     && rm -rf /tmp/codeintel \
     && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libgomp libmpc mpfr \
         glibc-static gcc-c++ libstdc++-devel
