@@ -17,10 +17,7 @@ RUN yum install -y gcc glibc-static make \
     && tar xf CodeIntel-0.9.3.tar.gz \
     && mv CodeIntel-0.9.3/SilverCity CodeIntel-0.9.3/silvercity \
     && tar czf CodeIntel-0.9.3.tar.gz CodeIntel-0.9.3 \
-    && pip install -U --no-index --find-links=/tmp/codeintel codeintel \
-    && rm -rf /tmp/codeintel \
-    && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libgomp libmpc mpfr \
-        glibc-static gcc-c++ libstdc++-devel
+    && pip install -U --no-index --find-links=/tmp/codeintel codeintel
 
 ENV WORKSPACE_DIR /root/
 ENV C9_IP 0.0.0.0
