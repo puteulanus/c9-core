@@ -1,7 +1,8 @@
 FROM centos:7
 
 RUN yum install -y gcc glibc-static make \
-    && yum -y install tmux git which \
+    && yum -y install tmux which \
+    && yum install git \
     && cd /usr/src/ \
     && git clone git://github.com/c9/core.git c9sdk \
     && cd c9sdk \
@@ -19,7 +20,8 @@ RUN yum install -y gcc glibc-static make \
     && tar czf CodeIntel-0.9.3.tar.gz CodeIntel-0.9.3 \
     && pip install -U --no-index --find-links=/tmp/codeintel codeintel \
     && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libmpc mpfr glibc-static make \
-    && rm -rf /tmp/codeintel
+    && rm -rf /tmp/codeintel \
+    && yum remove -y git libgnome-keyring perl-Error perl-Git perl-TermReadKey
 
 ENV WORKSPACE_DIR /root/
 ENV C9_IP 0.0.0.0
