@@ -26,7 +26,7 @@ RUN yum install -y gcc glibc-static make \
     perl-Filter perl-Getopt-Long perl-Git perl-HTTP-Tiny perl-PathTools perl-Pod-Escapes perl-Pod-Perldoc \
     perl-Pod-Simple perl-Pod-Usage perl-Scalar-List-Utils perl-Socket perl-Storable perl-TermReadKey \
     perl-Text-ParseWords perl-Time-HiRes perl-Time-Local perl-constant perl-libs perl-macros perl-parent \
-    perl-podlators perl-threads 
+    perl-podlators perl-threads perl-threads-shared
     
     
 ENV WORKSPACE_DIR /root/
