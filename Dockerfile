@@ -20,8 +20,8 @@ RUN yum install -y gcc glibc-static make \
     && tar czf CodeIntel-0.9.3.tar.gz CodeIntel-0.9.3 \
     && pip install -U --no-index --find-links=/tmp/codeintel codeintel \
     && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libmpc mpfr glibc-static make \
-    && rm -rf /tmp/codeintel 
-
+    && rm -rf /tmp/codeintel \
+    && yum remove -y git fipscheck fipscheck-lib groff-base less libedit libgnome-keyring openssh
 ENV WORKSPACE_DIR /root/
 ENV C9_IP 0.0.0.0
 ENV C9_PORT 8080
