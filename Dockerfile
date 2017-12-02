@@ -22,7 +22,8 @@ RUN yum install -y gcc glibc-static make \
     && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libmpc mpfr glibc-static make \
     && rm -rf /tmp/codeintel \
     && yum remove -y git fipscheck fipscheck-lib groff-base less libedit libgnome-keyring openssh \
-    openssh-clients perl perl-Carp perl-Encode perl-Error perl-Exporter perl-File-Path perl-File-Temp 
+    openssh-clients perl perl-Carp perl-Encode perl-Error perl-Exporter perl-File-Path perl-File-Temp \
+    perl-Filter perl-Getopt-Long perl-Git perl-HTTP-Tiny perl-PathTools perl-Pod-Escapes perl-Pod-Perldoc 
     
     
 ENV WORKSPACE_DIR /root/
