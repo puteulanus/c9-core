@@ -2,7 +2,7 @@ FROM centos:7
 
 RUN yum install -y gcc glibc-static make \
     && yum -y install tmux which \
-    && yum install git \
+    && yum install -y git \
     && cd /usr/src/ \
     && git clone git://github.com/c9/core.git c9sdk \
     && cd c9sdk \
@@ -21,7 +21,12 @@ RUN yum install -y gcc glibc-static make \
     && pip install -U --no-index --find-links=/tmp/codeintel codeintel \
     && yum remove -y gcc cpp glibc-devel glibc-headers kernel-headers libmpc mpfr glibc-static make \
     && rm -rf /tmp/codeintel \
-    && yum remove -y git libgnome-keyring perl-Error perl-Git perl-TermReadKey
+    && yum remove -y git fipscheck fipscheck-lib groff-base less libedit libgnome-keyring openssh \
+    openssh-clients perl perl-Carp perl-Encode perl-Error perl-Exporter perl-File-Path perl-File-Temp \
+    perl-Filter perl-Getopt-Long perl-Git perl-HTTP-Tiny perl-PathTools perl-Pod-Escapes perl-Pod-Perldoc \
+    perl-Pod-Simple perl-Pod-Usage perl-Scalar-List-Utils perl-Socket perl-Storable perl-TermReadKey \
+    perl-Text-ParseWords perl-Time-HiRes perl-Time-Local perl-constant perl-libs perl-macros perl-parent \
+    perl-podlators perl-threads perl-threads-shared rsync 
 
 ENV WORKSPACE_DIR /root/
 ENV C9_IP 0.0.0.0
